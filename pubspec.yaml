@@ -27,6 +27,7 @@ dependencies:
     git:
       url: https://github.com/hhacker1999/Size-Helper-flutter.git
   cupertino_icons: ^1.0.2
+  flutter_secure_storage: ^4.1.0
   provider: ^5.0.0
   rxdart: ^0.26.0
 
