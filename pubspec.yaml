@@ -26,10 +26,12 @@ dependencies:
   sizerutil:
     git:
       url: https://github.com/hhacker1999/Size-Helper-flutter.git
+  cloud_firestore: ^2.0.0
   cupertino_icons: ^1.0.2
   firebase_auth: ^1.0.1
   firebase_core: ^1.0.1
   flutter_secure_storage: ^4.1.0
+  http: ^0.13.3
   provider: ^5.0.0
   rxdart: ^0.26.0
 
