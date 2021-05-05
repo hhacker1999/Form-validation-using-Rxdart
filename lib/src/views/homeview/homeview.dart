@@ -12,14 +12,14 @@ class HomePage extends StatelessWidget {
               stream: context.read<ValidationBloc>().emailStream,
               builder: (_, snap) => TextField(
                 onChanged: context.read<ValidationBloc>().emailChanged,
-                decoration: InputDecoration(errorText: snap.error),
+                decoration: InputDecoration(errorText: snap.error as String?),
               ),
             ),
             StreamBuilder<String>(
               stream: Provider.of<ValidationBloc>(context).passwordStream,
               builder: (_, snap) => TextField(
                 onChanged: context.read<ValidationBloc>().passwordChanged,
-                decoration: InputDecoration(errorText: snap.error),
+                decoration: InputDecoration(errorText: snap.error as String?),
               ),
             ),
             StreamBuilder<String>(
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
               builder: (_, snap) => TextField(
                 onChanged:
                     context.read<ValidationBloc>().confirmPasswordChanged,
-                decoration: InputDecoration(errorText: snap.error),
+                decoration: InputDecoration(errorText: snap.error as String?),
               ),
             ),
             StreamBuilder<bool>(

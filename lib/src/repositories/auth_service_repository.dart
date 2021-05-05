@@ -1,3 +1,4 @@
+import 'package:project/src/app/locator.dart';
 import 'package:project/src/services/auth_service.dart';
 
 abstract class AuthServiceRepository {
@@ -6,9 +7,7 @@ abstract class AuthServiceRepository {
 }
 
 class AuthServiceRepositoryImplementation implements AuthServiceRepository {
-  final AuthService _authService;
-
-  AuthServiceRepositoryImplementation(this._authService);
+  final AuthService _authService = locator<AuthService>();
 
   @override
   Future<bool> verifyOtp(String smsCode) async {

@@ -1,19 +1,20 @@
 import 'dart:convert';
 import 'dart:math';
 import 'package:http/http.dart' as http;
-
+import 'package:injectable/injectable.dart';
+@lazySingleton
 class AuthService {
   static const _key = "0dd286b6-8882-11eb-a9bc-0200cd936042";
   static const _chars =
       'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
-  String _otp;
+  String? _otp;
   Future<bool> requestOtp(String phoneNumber) async {
     _otp = _generateRandomString();
     try {
       var response = await http.get(
           Uri.parse('https://2factor.in/API/V1/$_key/SMS/$phoneNumber/$_otp'));
       Map<String, dynamic> decodedResponse = jsonDecode(response.body);
-      String status = decodedResponse['status'];
+      String? status = decodedResponse['status'];
       if (status == 'success')
         return true;
       else

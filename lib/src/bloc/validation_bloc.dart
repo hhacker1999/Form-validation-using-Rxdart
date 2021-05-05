@@ -19,13 +19,13 @@ class ValidationBloc {
 
   //ValueStreams
   Stream<String> get emailStream =>
-      _emailSubject.transform(_emailTransformer());
+      _emailSubject.transform(_emailTransformer() as StreamTransformer<String, String>);
   Stream<String> get passwordStream =>
-      _passwordSubject.stream.transform(_passwordTransformer());
+      _passwordSubject.stream.transform(_passwordTransformer() as StreamTransformer<String, String>);
   Stream<String> get confirmPasswordStream =>
-      _confirmPasswordSubject.stream.transform(_confirmPasswordTransformer());
+      _confirmPasswordSubject.stream.transform(_confirmPasswordTransformer() as StreamTransformer<String, String>);
   Stream<bool> get buttonActive => Rx.combineLatest3(
-      emailStream, passwordStream, confirmPasswordStream, (a, b, c) => true);
+      emailStream, passwordStream, confirmPasswordStream, (dynamic a, dynamic b, dynamic c) => true);
 
   //StreamTransformers
   StreamTransformer _emailTransformer() {
