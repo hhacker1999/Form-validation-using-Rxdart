@@ -10,8 +10,9 @@ import 'package:injectable/injectable.dart' as _i2;
 import '../managers/auth_manager.dart' as _i4;
 import '../services/auth_service.dart' as _i5;
 import '../services/firebase_service.dart' as _i6;
-import '../views/login_view/login_view_model.dart' as _i7;
-import '../views/startup_view/startup_view_model.dart' as _i8;
+import '../services/location_service.dart' as _i7;
+import '../views/login_view/login_view_model.dart' as _i8;
+import '../views/startup_view/startup_view_model.dart' as _i9;
 import 'app_navigator.dart' as _i3; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
@@ -23,7 +24,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.AuthManager>(() => _i4.AuthManager());
   gh.lazySingleton<_i5.AuthService>(() => _i5.AuthService());
   gh.lazySingleton<_i6.FirebaseService>(() => _i6.FirebaseService());
-  gh.lazySingleton<_i7.LoginViewModel>(() => _i7.LoginViewModel());
-  gh.lazySingleton<_i8.StartUpViewModel>(() => _i8.StartUpViewModel());
+  gh.lazySingleton<_i7.LocationService>(() => _i7.LocationService());
+  gh.lazySingleton<_i8.LoginViewModel>(() => _i8.LoginViewModel());
+  gh.lazySingleton<_i9.StartUpViewModel>(() => _i9.StartUpViewModel());
   return get;
 }
