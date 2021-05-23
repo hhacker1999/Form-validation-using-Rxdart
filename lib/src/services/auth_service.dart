@@ -28,4 +28,9 @@ class AuthService {
   Future<void> signOut() async {
     await _auth.signOut();
   }
+
+  Future<bool> isLoggedIn() async {
+    var result = _auth.currentUser;
+    return result != null;
+  }
 }

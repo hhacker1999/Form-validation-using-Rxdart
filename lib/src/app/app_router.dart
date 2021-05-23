@@ -7,12 +7,12 @@ import 'package:project/src/views/startup_view/startup_view.dart';
 Route<dynamic> generateRoutes(RouteSettings settings) {
   switch (settings.name) {
     case AppConstants.startUpView:
-      return MaterialPageRoute(builder: (context) => StartUpView());
+      return MaterialPageRoute(builder: (context) => StartupView());
     case AppConstants.loginView:
       return MaterialPageRoute(builder: (context) => LoginView());
     case AppConstants.homeView:
       return MaterialPageRoute(builder: (context) => HomeView());
     default:
-      return MaterialPageRoute(builder: (context) => StartUpView());
+      return MaterialPageRoute(builder: (context) => StartupView());
   }
 }

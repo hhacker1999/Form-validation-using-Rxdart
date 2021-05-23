@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_view_model/flutter_view_model.dart';
+import 'package:project/src/app/app_constants.dart';
 import 'package:project/src/app/locator.dart';
-import 'package:project/src/views/homeview/homeview.dart';
 import 'login_view_model/login_view_model.dart';
 
 
@@ -33,11 +33,9 @@ class _LoginViewState extends State<LoginView> {
             ModelConsumer<LoginViewState, LoginViewModel>(
               listener: (_, state) {
                 if (state is LoadedState)
-                  Navigator.pushReplacement(
+                  Navigator.pushReplacementNamed(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeView(),
-                    ),
+                    AppConstants.homeView
                   );
               },
               model: _model,

@@ -18,7 +18,7 @@ class LoginViewModel extends BaseModel<LoginViewEvent, LoginViewState> {
   late StreamSubscription<LoginViewState> _stateSubscription;
 
   LoginViewModel() : super(InitialState()) {
-    clearingSingleton();
+    _clearSingleton();
   }
 
   @override
@@ -59,7 +59,7 @@ class LoginViewModel extends BaseModel<LoginViewEvent, LoginViewState> {
         codeAutoRetrievalTimeout: (a) {});
   }
 
-  void clearingSingleton() {
+  void _clearSingleton() {
     _stateSubscription = this.state.listen(
       (state) {
         if (state is LoadedState) {
