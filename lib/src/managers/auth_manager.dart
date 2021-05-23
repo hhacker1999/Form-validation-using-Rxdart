@@ -29,4 +29,8 @@ class AuthManager {
     else
       return false;
   }
+
+  Future<bool> isLoggedIn() async {
+    return _authService.isLoggedIn();
+  }
 }
